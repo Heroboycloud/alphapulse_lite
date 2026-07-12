@@ -3,7 +3,7 @@
 // Uses JSON file storage
 
 
-const  {TelegramBot}  = require('node-telegram-bot-api');
+const  TelegramBot  = require('node-telegram-bot-api');
 const WebSocket = require('ws');
 const fs = require('fs');
 const path = require('path');
