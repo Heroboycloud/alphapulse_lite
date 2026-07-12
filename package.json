@@ -8,6 +8,7 @@
   "dependencies": {
     "express":"^5.2.0",
     "node-telegram-bot-api": "^0.67.0",
+     "cli-color": "^2.0.4",
     "ws": "^8.21.0",
     "dotenv": "^17.2.3"
   }

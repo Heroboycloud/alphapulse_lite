@@ -212,10 +212,6 @@ class PumpFunAlertBot {
         this.db = new Database();
         this.analyzer = new TokenAnalyzer();
         this.bot = new TelegramBot(CONFIG.TELEGRAM_TOKEN, {
-            polling: true,
-            request: {
-                timeout: 30000
-            },
             allowed_updates: ['message', 'my_chat_member', 'callback_query']
         });
         this.ws = null;
