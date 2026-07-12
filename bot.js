@@ -211,9 +211,7 @@ class PumpFunAlertBot {
     constructor() {
         this.db = new Database();
         this.analyzer = new TokenAnalyzer();
-        this.bot = new TelegramBot(CONFIG.TELEGRAM_TOKEN, {
-            allowed_updates: ['message', 'my_chat_member', 'callback_query']
-        });
+        this.bot = new TelegramBot(CONFIG.TELEGRAM_TOKEN);
         this.ws = null;
         this.alertQueue = [];
         this.isProcessingQueue = false;
@@ -225,7 +223,17 @@ class PumpFunAlertBot {
         this.startCleanupJob();
         
         logger.info('🚀 Bot initialized successfully');
+
+        let botMe = null;
+this.bot.getMe().then(me => {
+    botMe = me;
+    log(`🤖 Bot name: @${me.username}`);
+}).catch(error => {
+    log(`Failed to get bot info: ${error.message}`, 'ERROR');
+});
     }
+
+    
 
     // ==========================================
     // WEB SOCKET
