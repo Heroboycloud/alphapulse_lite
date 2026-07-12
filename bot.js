@@ -227,9 +227,9 @@ class PumpFunAlertBot {
         let botMe = null;
 this.bot.getMe().then(me => {
     botMe = me;
-    log(`🤖 Bot name: @${me.username}`);
+    logger.info(`🤖 Bot name: @${me.username}`);
 }).catch(error => {
-    log(`Failed to get bot info: ${error.message}`, 'ERROR');
+    logger.error(`Failed to get bot info: ${error.message}`, 'ERROR');
 });
     }
 
