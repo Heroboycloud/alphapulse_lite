@@ -211,7 +211,7 @@ class PumpFunAlertBot {
     constructor() {
         this.db = new Database();
         this.analyzer = new TokenAnalyzer();
-        this.bot = new TelegramBot(CONFIG.TELEGRAM_TOKEN
+        this.bot = new TelegramBot(CONFIG.TELEGRAM_TOKEN,
             {
                 allowed_updates: ['message','my_chat_member','chat_member','callback_query']
             }
