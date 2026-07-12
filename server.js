@@ -1,9 +1,11 @@
 // server.js
 const express = require('express');
-const bot = require('./bot');
+const Pumpbot = require('./bot');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const mybot= new Pumpbot();
+const bot= mybot.bot;
 
 // Parse JSON bodies
 app.use(express.json());

@@ -807,6 +807,7 @@ process.on('unhandledRejection', (reason) => {
 });
 
 // Initialize bot
+/*
 try {
     global.bot = new PumpFunAlertBot();
     logger.info('✅ Bot is running!');
@@ -814,4 +815,5 @@ try {
     logger.error(`Failed to start bot: ${error.message}`);
     process.exit(1);
 }
-module.exports = global.bot;
+*/
+module.exports = PumpFunAlertBot;
