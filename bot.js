@@ -222,6 +222,7 @@ class PumpFunAlertBot {
         this.isShuttingDown = false;
         
         this.initBotCommands();
+        this.sendTomyChannel();
         this.initWebSocket();
         this.startQueueProcessor();
         this.startCleanupJob();
@@ -237,7 +238,14 @@ this.bot.getMe().then(me => {
 });
     }
 
-    
+    sendTomyChannel(){
+          const activeGroups = ["-1004229431019","-1003766079811"];
+          for (const groupId of activeGroups) {
+          this.bot.sendMessage(groupId, `⚠️ ALERT: Free messages might take up to 3 minutes to reach you. Upgrade to premium for instant alerts!`)
+    .then((msg) => console.log('Alert sent successfully:', msg.message_id))
+    .catch((err) => console.error('Failed to send alert out to group:', err.message));
+}
+    }
 
     // ==========================================
     // WEB SOCKET
