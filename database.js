@@ -190,7 +190,7 @@ class Database {
     }
 
     getActiveGroups() {
-        const activeGroups = ["-1004229431019","-1003766079811"];
+        const activeGroups = [];
         for (const [groupId, group] of Object.entries(this.groups)) {
             if (group.isActive) {
                 activeGroups.push(parseInt(groupId));

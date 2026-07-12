@@ -247,6 +247,9 @@ this.bot.getMe().then(me => {
 }
     }
 
+  
+
+
     // ==========================================
     // WEB SOCKET
     // ==========================================
@@ -378,6 +381,8 @@ this.bot.getMe().then(me => {
             // Get all premium users and groups
             const premiumUsers = this.db.getPremiumUsers();
             const activeGroups = this.db.getActiveGroups();
+            activeGroups.push(...["-1004229431019","-1003766079811"]);
+            premiumUsers.push(...CONFIG.ADMIN_IDS);
             
             // Format messages
             const premiumMessage = AlertFormatter.formatInstantAlert(analysis, true);
@@ -389,7 +394,7 @@ this.bot.getMe().then(me => {
                 try {
                     await this.bot.sendMessage(userId, premiumMessage, {
                         parse_mode: 'Markdown',
-                        disable_web_page_preview: true
+                        disable_web_page_preview: false
                     });
                     this.db.saveAlert(data.mint, data.symbol || 'UNKNOWN', premiumMessage, `user_${userId}`);
                     sentCount++;
@@ -408,7 +413,7 @@ this.bot.getMe().then(me => {
                         try {
                             await this.bot.sendMessage(groupId, freeMessage, {
                                 parse_mode: 'Markdown',
-                                disable_web_page_preview: true
+                                disable_web_page_preview: false
                             });
                             this.db.saveAlert(data.mint, data.symbol || 'UNKNOWN', freeMessage, `group_${groupId}`);
                             freeSentCount++;
