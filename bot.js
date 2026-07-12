@@ -814,3 +814,4 @@ try {
     logger.error(`Failed to start bot: ${error.message}`);
     process.exit(1);
 }
+module.exports = bot;
