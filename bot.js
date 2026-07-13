@@ -35,7 +35,7 @@ const CONFIG = {
 // it without touching the alert logic.
 // ============================================
 const MESSAGING = {
-    UPGRADE_CTA: "Upgrade with @YourPaymentBot to remove the delay"
+    UPGRADE_CTA: "Upgrade with @ElitePremiumPayBot to remove the delay"
 };
 
 
